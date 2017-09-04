@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">OneTapNwuNet</string>
+    <string name="tile_label">NwuNet</string>
+    <string name="tile_status_check">Checking&#8230;</string>
+    <string name="tile_status_loggin">Logining&#8230;</string>
+    <string name="tile_status_ok">OK</string>
+    <string name="tile_status_not">Not</string>
+    <string name="tile_status_failed">Failed</string>
+    <string name="tile_status_no_net_conn">NoNetConn</string>
+
+</resources>
