@@ -3,14 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27  /**编译sdk*/
+    buildToolsVersion "27.0.2"  /**编译工具版本*/
 
     defaultConfig {
         applicationId "com.shuaiqing.nwunet"
-        minSdkVersion 24
-        targetSdkVersion 26
-        versionCode 1
+        minSdkVersion 24  /**最低版本*/
+        targetSdkVersion 26 /**已试验过的版本*/
+        versionCode 1001100
         versionName "1.0.beta"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,6 +29,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-messaging:11.6.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
