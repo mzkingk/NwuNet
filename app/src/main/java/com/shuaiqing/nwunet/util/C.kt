@@ -9,5 +9,5 @@ object C {
     // 登录用户名
     val USER_NAME = "2015117048"
     // 登录密码
-    val PWD = "woshishui"
+    val PWD = "nishishui"
 }
