@@ -1,5 +1,6 @@
 package com.shuaiqing.nwunet.util
 
+import android.content.SharedPreferences
 import android.util.Log
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -19,8 +20,8 @@ object NwuNet {
         try {
             val huc = URL(C.CAMPUS_NET_URL).openConnection() as HttpURLConnection
             huc.requestMethod = "GET"
-            huc.connectTimeout = 3000
-            huc.readTimeout = 3000
+            huc.connectTimeout = 600
+            huc.readTimeout = 600
             val inputStream = huc.inputStream
             bufferedReader = BufferedReader(InputStreamReader(inputStream, "GBK"))
             val sbContent = StringBuilder()
@@ -39,6 +40,7 @@ object NwuNet {
         }
         return null
     }
+
     /**
      * 登录校园网
      * @param userName 登录帐号
@@ -47,6 +49,8 @@ object NwuNet {
      *          false - 登录失败
      */
     fun login(userName: String, pwd: String): Boolean {
+//        SharedPreferences pref=getSharedPreferences()
+
         Log.d(C.LOG_TAG, "NwuNet - login")
         try {
             val huc = URL(C.CAMPUS_NET_URL).openConnection() as HttpURLConnection
@@ -54,7 +58,7 @@ object NwuNet {
             huc.connectTimeout = 4000
             huc.readTimeout = 4000
             huc.doOutput = true
-
+            //formdata,各个学校的都不一样
             val paras = "DDDDD=$userName&upass=$pwd&R1=0&R2=&R6=0&para=00&0MKKey=123456&v6ip=&hid1=4458&hid2=52030005&cn=2"
             val dos = DataOutputStream(huc.outputStream)
             dos.write(paras.toByteArray())
@@ -70,7 +74,6 @@ object NwuNet {
                 buffer = bufferedReader.readLine()
             }
             bufferedReader.close()
-
             return sbContent.contains("登录成功窗")
         } catch (e: Exception) {
             e.printStackTrace()

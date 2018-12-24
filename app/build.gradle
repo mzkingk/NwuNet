@@ -2,25 +2,27 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
-    /**编译sdk*/
+    //编译sdk
     compileSdkVersion 27
-    /**编译工具版本*/
-    buildToolsVersion '27.0.3'
+    //编译工具版本
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.shuaiqing.nwunet"
-        /**最低版本*/
+        //最低版本
         minSdkVersion 24
-        /**已试验过的版本*/
-        targetSdkVersion 26
+        //已试验过的版本
+        targetSdkVersion 27
         versionCode 1001100
         versionName "1.0.beta"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", "\"http://debug.api/\""
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", "\"https://release.api/\""
         }
     }
 }
@@ -30,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-messaging:11.6.2'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {})
     testImplementation 'junit:junit:4.12'

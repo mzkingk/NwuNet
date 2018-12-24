@@ -2,10 +2,6 @@ package com.shuaiqing.nwunet.util
 
 import java.security.MessageDigest
 
-/**
- * Created by shuaiqing on 2017/12/17.
- */
-
 object MD5 {
     /**
      * MD5 加密并返回十六进制结果

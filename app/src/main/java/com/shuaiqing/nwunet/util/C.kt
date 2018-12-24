@@ -2,6 +2,9 @@ package com.shuaiqing.nwunet.util
 
 import android.os.Build
 
+/**
+ * 全局变量,地址,账户密码
+ */
 object C {
     val SDK = Build.VERSION.SDK_INT
     val LOG_TAG = "ONE_TAP_CDUT_NET"
