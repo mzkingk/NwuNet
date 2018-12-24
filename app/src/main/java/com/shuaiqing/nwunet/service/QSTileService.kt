@@ -47,6 +47,7 @@ class QSTileService : TileService() {
             } else if (!res) { // 未登录校园网，进行登录操作
                 publishProgress(R.string.tile_status_loggin)
 
+                //缓存中读取数据
                 val preferences = getSharedPreferences("loginData", Context.MODE_PRIVATE)
                 val account = preferences.getString("account", "2015110110")
                 val passwd = preferences.getString("passwd", "empty")
@@ -55,10 +56,6 @@ class QSTileService : TileService() {
                     publishProgress(R.string.tile_status_failed)
                     return false
                 }
-//                else if (!NwuNet.login(C.USER_NAME, C.PWD)) {
-//                    publishProgress(R.string.tile_status_failed)
-//                    return false
-//                }
             }
             // 至此，表示已成功登录
             publishProgress(R.string.tile_status_ok)
