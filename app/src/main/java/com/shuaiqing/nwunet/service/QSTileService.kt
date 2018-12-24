@@ -71,7 +71,6 @@ class QSTileService : TileService() {
 
         override fun onProgressUpdate(vararg values: Int?) {
             super.onProgressUpdate(*values)
-
             updateStatus(values[0])
         }
     }
