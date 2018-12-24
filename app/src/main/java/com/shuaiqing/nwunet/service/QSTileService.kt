@@ -5,11 +5,8 @@ import android.os.AsyncTask
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.shuaiqing.nwunet.R
-import com.shuaiqing.nwunet.util.C
 import com.shuaiqing.nwunet.util.NwuNet
 import com.shuaiqing.nwunet.util.Net
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 
 
 /**
