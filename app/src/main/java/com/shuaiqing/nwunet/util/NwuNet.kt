@@ -1,6 +1,5 @@
 package com.shuaiqing.nwunet.util
 
-import android.content.SharedPreferences
 import android.util.Log
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -49,7 +48,6 @@ object NwuNet {
      *          false - 登录失败
      */
     fun login(userName: String, pwd: String): Boolean {
-//        SharedPreferences pref=getSharedPreferences()
 
         Log.d(C.LOG_TAG, "NwuNet - login")
         try {
