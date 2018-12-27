@@ -38,10 +38,14 @@ class QSTileService : TileService() {
         override fun doInBackground(vararg params: String?): Boolean {
             publishProgress(R.string.tile_status_check)
             val res = NwuNet.check() // 检查校园网连接
-            if (res == null) { // 未连接校园网，结束
+            println("检查校园网连接" + res)
+            // 未连接校园网，直接结束
+            if (res == null) {
                 publishProgress(R.string.tile_status_not)
                 return false
-            } else if (!res) { // 未登录校园网，进行登录操作
+            }
+            // 未登录校园网，进行登录操作
+            else if (!res) {
                 publishProgress(R.string.tile_status_loggin)
 
                 //缓存中读取数据
@@ -54,7 +58,7 @@ class QSTileService : TileService() {
                     return false
                 }
             }
-            // 至此，表示已成功登录
+            // res==true，表示已登录
             publishProgress(R.string.tile_status_ok)
             return true
         }

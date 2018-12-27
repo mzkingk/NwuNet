@@ -15,27 +15,24 @@ object NwuNet {
      */
     fun check(): Boolean? {
         Log.d(C.LOG_TAG, "NwuNet - check")
-        var bufferedReader: BufferedReader? = null
         try {
-            val huc = URL(C.CAMPUS_NET_URL).openConnection() as HttpURLConnection
-            huc.requestMethod = "GET"
-            huc.connectTimeout = 600
-            huc.readTimeout = 600
-            val inputStream = huc.inputStream
-            bufferedReader = BufferedReader(InputStreamReader(inputStream, "GBK"))
-            val sbContent = StringBuilder()
-            var buffer = bufferedReader.readLine()
-            while (buffer != null) {
-                sbContent.append(buffer)
-                buffer = bufferedReader.readLine()
+            val obj = URL(C.CAMPUS_CHECK_URL)
+            val response = StringBuffer()
+            with(obj.openConnection() as HttpURLConnection) {
+                requestMethod = "GET"
+                connectTimeout = 600
+                readTimeout = 600
+                BufferedReader(InputStreamReader(inputStream, "GB2312")).use {
+                    var inputLine = it.readLine()
+                    while (inputLine != null) {
+                        response.append(inputLine)
+                        inputLine = it.readLine()
+                    }
+                }
             }
-            return sbContent.contains("已使用时间")
+            return response.contains("已使用时间")
         } catch (e: Exception) {
             e.printStackTrace()
-        } finally {
-            if (bufferedReader != null) {
-                bufferedReader.close()
-            }
         }
         return null
     }
