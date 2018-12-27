@@ -39,13 +39,10 @@ class QSTileService : TileService() {
             publishProgress(R.string.tile_status_check)
             val res = NwuNet.check() // 检查校园网连接
             println("检查校园网连接" + res)
-            // 未连接校园网，直接结束
-            if (res == null) {
+            if (res == null) {// 未连接校园网，直接结束
                 publishProgress(R.string.tile_status_not)
                 return false
-            }
-            // 未登录校园网，进行登录操作
-            else if (!res) {
+            } else if (!res) {// 未登录校园网，进行登录操作
                 publishProgress(R.string.tile_status_loggin)
 
                 //缓存中读取数据
