@@ -15,16 +15,16 @@ class MainActivity : Activity() {
         var editTextAccount = findViewById(R.id.editTextAccount) as EditText
         var editTextPasswd = findViewById(R.id.editTextPasswd) as EditText
 
+        //读取缓存的账号密码
         getDataBtn.setOnClickListener {
-            //读取缓存的账号密码
             val data = getSharedPreferences("loginData", Context.MODE_PRIVATE)
             val account = data.getString("account", "空")
             val passwd = data.getString("passwd", "-1")
             Toast.makeText(this, "当前缓存的账号为" + account + ",密码长度为" + passwd.length, Toast.LENGTH_SHORT).show()
         }
 
+        //账号密码写入缓存
         submitBtn.setOnClickListener {
-            //账号密码写入缓存
             var account = editTextAccount.text.toString()
             var passwd = editTextPasswd.text.toString()
             if (account.length == 10 && passwd.length >= 6 && passwd.length <= 20) {
