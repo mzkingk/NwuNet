@@ -9,13 +9,12 @@ object C {
     val SDK = Build.VERSION.SDK_INT
     val LOG_TAG = "ONE_TAP_CDUT_NET"
 
-    // 校园网登录地址
-    val CAMPUS_NET_URL = "http://10.0.1.242/a70.htm"
-
-    val CAMPUS_CHECK_URL ="http://10.0.1.242"
+    // 多个不同登录地址
+    val CAMPUS_CHECK_URL = "http://10.0.1.242"
+    val CAMPUS_CHECK_URL2 = "http://10.0.1.237"
 
     // 登录用户名
-    val USER_NAME = "***"
+    val USER_NAME = ""
     // 登录密码
-    val PWD = "***"
+    val PWD = ""
 }

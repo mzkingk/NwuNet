@@ -5,6 +5,8 @@ import android.os.AsyncTask
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import com.shuaiqing.nwunet.R
+import com.shuaiqing.nwunet.util.C
+import com.shuaiqing.nwunet.util.C.CAMPUS_CHECK_URL2
 import com.shuaiqing.nwunet.util.NwuNet
 import com.shuaiqing.nwunet.util.Net
 
@@ -37,7 +39,10 @@ class QSTileService : TileService() {
     inner class Task : AsyncTask<String, Int, Boolean>() {
         override fun doInBackground(vararg params: String?): Boolean {
             publishProgress(R.string.tile_status_check)
-            val res = NwuNet.check() // 检查校园网连接
+            var res = NwuNet.check(C.CAMPUS_CHECK_URL) // 检查校园网连接
+            if (res == null || res == false) {
+                res = NwuNet.check(CAMPUS_CHECK_URL2) //检查另一个地址
+            }
             println("检查校园网连接" + res)
             if (res == null) {// 未连接校园网，直接结束
                 publishProgress(R.string.tile_status_not)
@@ -50,12 +55,14 @@ class QSTileService : TileService() {
                 val account = preferences.getString("account", "2015110110")
                 val passwd = preferences.getString("passwd", "empty")
 
-                if (!NwuNet.login(account, passwd)) { // 登录失败，结束
-                    publishProgress(R.string.tile_status_failed)
-                    return false
+                if (!NwuNet.login(C.CAMPUS_CHECK_URL, account, passwd)) { // 登录失败，结束
+                    if (!NwuNet.login(C.CAMPUS_CHECK_URL2, account, passwd)) { // 尝试另一种情况
+                        publishProgress(R.string.tile_status_failed)
+                        return false
+                    }
                 }
             }
-            // res==true，表示已登录
+            // 如果能运行到这里,则表示已登录
             publishProgress(R.string.tile_status_ok)
             return true
         }
