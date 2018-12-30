@@ -10,4 +10,12 @@
     <string name="tile_status_failed">Failed</string>
     <string name="tile_status_conflict">Conflict</string>
     <string name="tile_status_no_net_conn">NoNet</string>
+    <!--app内文字-->
+    <string name="hello_nwunet_by_shiqingk">Hello!请先保存新旧校园网的账号密码,然后在状态栏添加NwuNet按钮，之后每次连上校园网之后,点它开启新世界吧！！！\nby shiqingk</string>
+    <string name="value_accountNew">写入新账号</string>
+    <string name="value_read_saved_account">读取</string>
+    <string name="value_accountOld">写入旧账号</string>
+    <string name="value_passwd">密码</string>
+    <string name="value_account">账号</string>
+    <string name="textView_bottom_description">提示说明\nNotNwu--非校园网wifi\nFailed--当前旧校园网的账号密码有误\nConflict--当前新校园网的密码错误或者是在线设备已满\n</string>
 </resources>

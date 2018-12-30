@@ -77,7 +77,7 @@ class QSTileService : TileService() {
                     val loginDataNwu = getSharedPreferences("loginDataNwu", Context.MODE_PRIVATE)
                     val accountNew = loginDataNwu.getString("account", "2015110110")
                     val passwdNew = loginDataNwu.getString("passwd", "empty")
-                    if (!NewNwuNet.login(accountNew, passwdNew)) { // 尝试新校园网
+                    if (NewNwuNet.login(accountNew, passwdNew) != true) { // 尝试新校园网
                         publishProgress(R.string.tile_status_conflict)
                         return false
                     }

@@ -52,7 +52,7 @@ object NewNwuNet {
      * @return true - 登录成功
      *          false - 登录失败
      */
-    fun login(account: String, passwd: String): Boolean {
+    fun login(account: String, passwd: String): Boolean? {
         Log.d(C.LOG_TAG, "NewNwuNet-login")
         try {
             var redir: String? = null
@@ -67,11 +67,11 @@ object NewNwuNet {
             data.write(formData3.toByteArray())
             data.flush()
             data.close()
-            println(con.responseCode)
+            println("res->\n"+con.responseCode)
             return if (con.responseCode == 200) true else false
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        return false
+        return null
     }
 }
