@@ -31,6 +31,7 @@ object NewNwuNet {
                     }
                 }
             }
+//            println("response->"+response)
             if (response.contains("Success")) {     //返回给service的
                 return "200"
             } else {    //返回给login的

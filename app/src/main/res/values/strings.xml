@@ -8,5 +8,6 @@
     <string name="tile_status_ok">OK</string>
     <string name="tile_status_not">NotNwu</string>
     <string name="tile_status_failed">Failed</string>
+    <string name="tile_status_conflict">Conflict</string>
     <string name="tile_status_no_net_conn">NoNet</string>
 </resources>
