@@ -8,11 +8,11 @@
     <!--提示-->
     <TextView
             android:id="@+id/textTop"
-            android:layout_width="376dp"
-            android:layout_height="135dp"
-            android:text="哈喽,这是个菜鸡自制的校园网一键登录程序,nwu专属,新旧客户端均可以跳过登录界面直接一键登录\n 旧账号为之前nwunet的账号,新账号为现在整改的宿舍楼用的账号\n 界面就是这么臭哈哈哈"
+            android:layout_width="327dp"
+            android:layout_height="106dp"
+            android:text="Hello!请在状态栏添加NwuNet按钮，然后每次连上校园网之后,点它开启新世界吧！！！by shiqingk"
             android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-            android:layout_marginTop="10dp" android:textSize="17sp"/>
+            android:layout_marginTop="39dp" android:textSize="18sp"/>
     <!--账号-->
     <TextView
             android:text="账号"
@@ -51,31 +51,24 @@
             android:layout_alignStart="@+id/editTextAccount"/>
     <!--登录-->
     <Button
-            android:text="存入旧账号"
+            android:text="写入旧账号"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:id="@+id/submitBtn"
-            android:textSize="20sp"
-            android:layout_toStartOf="@+id/getDataBtn" android:layout_alignTop="@+id/submitBtnNew"/>
+            android:layout_marginBottom="183dp"
+            android:textSize="18sp" android:layout_alignStart="@+id/textTop"/>
     <Button
             android:text="读取"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/getDataBtn"
-            android:textSize="20sp" android:layout_centerInParent="true"/>
+            android:textSize="18sp" android:layout_centerHorizontal="true" android:layout_above="@+id/submitBtn"/>
     <Button
-            android:text="存入新账号"
+            android:text="写入新账号"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/submitBtnNew"
-            android:textSize="20sp"
-            android:layout_toEndOf="@+id/getDataBtn" android:layout_alignParentBottom="true"
-            android:layout_marginBottom="245dp"/>
-    <TextView
-            android:text="新旧账号都保存后请在状态栏添加NwuNet按钮，然后每次连上校园网之后,点它开启新世界吧！！！by shiqingk"
-            android:layout_width="376dp"
-            android:layout_height="77dp"
-            android:layout_alignParentBottom="true" android:id="@+id/textViewBottom"
-            android:layout_marginBottom="62dp" android:textSize="17sp" android:layout_centerHorizontal="true"/>
+            android:textSize="18sp" android:layout_alignEnd="@+id/textTop" android:layout_alignTop="@+id/submitBtn"/>
 
 </RelativeLayout>

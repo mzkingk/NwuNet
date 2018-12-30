@@ -7,6 +7,8 @@
 校园网一键登录小程序for 西大版  
   
 安卓新手都算不上,完全弄着玩的  
+程序仅在三星s8与pixel 2系列上进行测试
+安卓7.0以上可用
 
 主界面  
   ![image](https://wx4.sinaimg.cn/large/006fjQMUly1fyi63w1z7ej30a00hrwf6.jpg)

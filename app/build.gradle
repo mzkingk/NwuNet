@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.shuaiqing.nwunet"
         //最低版本
-        minSdkVersion 24
+        minSdkVersion 25
         //已试验过的版本
         targetSdkVersion 27
         versionCode 1001100
@@ -36,5 +36,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {})
     testImplementation 'junit:junit:4.12'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }

@@ -4,7 +4,7 @@ import java.security.MessageDigest
 
 object MD5 {
     /**
-     * MD5 加密并返回十六进制结果
+     * MD5 加密并返回十六进制结果,预留
      */
     fun md5(text: String): String {
         val messageDigest = MessageDigest.getInstance("MD5")

@@ -47,10 +47,9 @@ class QSTileService : TileService() {
                 res = NwuNet.check(CAMPUS_CHECK_URL2) //检查237地址
             }
             println("检查校园网连接2" + res)
-            var flagNew = 0     //0为非新校园网,1为新校园网但未登录,2为已登录
             if (res == null || res == false) {
                 var resultNewNet = NewNwuNet.check(CAMPUS_CHECK_URL3, null) //检查新校园网的地址
-                flagNew = if (resultNewNet != null && resultNewNet.contains("200")) 2 else 1
+                var flagNew = if (resultNewNet != null && resultNewNet.contains("200")) 2 else 1        //0为非新校园网,1为新校园网但未登录,2为已登录
                 if (flagNew == 0) {
                     res = null
                 } else {
@@ -71,9 +70,9 @@ class QSTileService : TileService() {
                 if (!NwuNet.login(C.CAMPUS_CHECK_URL, account, passwd)) { // 尝试242
                     if (!NwuNet.login(CAMPUS_CHECK_URL2, account, passwd)) { // 尝试237
                         val loginDataNwu = getSharedPreferences("loginDataNwu", Context.MODE_PRIVATE)
-                        val account = loginDataNwu.getString("account", "2015110110")
-                        val passwd = loginDataNwu.getString("passwd", "empty")
-                        if (!NewNwuNet.login(account, passwd)) { // 尝试新校园网
+                        val accountNew = loginDataNwu.getString("account", "2015110110")
+                        val passwdNew = loginDataNwu.getString("passwd", "empty")
+                        if (!NewNwuNet.login(accountNew, passwdNew)) { // 尝试新校园网
                             publishProgress(R.string.tile_status_failed)
                             return false    //三种情况全失败
                         }
