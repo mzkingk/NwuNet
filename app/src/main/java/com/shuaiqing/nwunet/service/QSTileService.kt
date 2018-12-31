@@ -68,18 +68,19 @@ class QSTileService : TileService() {
                 val loginData = getSharedPreferences("loginData", Context.MODE_PRIVATE)
                 val account = loginData.getString("account", "2015110110")
                 val passwd = loginData.getString("passwd", "empty")
-                if (flagNew == 0 && !NwuNet.login(C.CAMPUS_CHECK_URL, account, passwd)) { // 旧网 ? 尝试242 : 尝试新网
+                if (!NwuNet.login(C.CAMPUS_CHECK_URL, account, passwd)) { // 旧网 ? 尝试242 : 尝试新网
                     if (!NwuNet.login(CAMPUS_CHECK_URL2, account, passwd)) { // 尝试237
-                        publishProgress(R.string.tile_status_failed)
-                        return false    //当前是旧校园网,但是登录失败
-                    }
-                } else if (flagNew == 1) {
-                    val loginDataNwu = getSharedPreferences("loginDataNwu", Context.MODE_PRIVATE)
-                    val accountNew = loginDataNwu.getString("account", "2015110110")
-                    val passwdNew = loginDataNwu.getString("passwd", "empty")
-                    if (NewNwuNet.login(accountNew, passwdNew) != true) { // 尝试新校园网
-                        publishProgress(R.string.tile_status_conflict)
-                        return false
+                        if (flagNew == 0) {
+                            publishProgress(R.string.tile_status_failed)
+                            return false    //当前是旧校园网,但是登录失败
+                        }
+                        val loginDataNwu = getSharedPreferences("loginDataNwu", Context.MODE_PRIVATE)
+                        val accountNew = loginDataNwu.getString("account", "2015110110")
+                        val passwdNew = loginDataNwu.getString("passwd", "empty")
+                        if (NewNwuNet.login(accountNew, passwdNew) != true) { // 尝试新校园网
+                            publishProgress(R.string.tile_status_conflict)
+                            return false
+                        }
                     }
                 }
             }
