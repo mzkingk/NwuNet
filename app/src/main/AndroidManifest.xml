@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shuaiqing.nwunet">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.shuaiqing.nwunet">
     <!-- 用于判断 WiFi 连接 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!-- 联网必需 -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:networkSecurityConfig="@xml/network_security_config"
+    >
         <activity android:name=".activity.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <!-- Quick Settings Tile Service -->
         <service
-            android:name=".service.QSTileService"
-            android:label="@string/tile_label"
-            android:icon="@drawable/ic_tile_network"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+                android:name=".service.QSTileService"
+                android:label="@string/tile_label"
+                android:icon="@drawable/ic_tile_network"
+                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
     </application>
 </manifest>
+
+        <!--Android高版本联网失败报错:Cleartext HTTP traffic to xxx not permitted解决方法https://blog.csdn.net/gengkui9897/article/details/82863966-->

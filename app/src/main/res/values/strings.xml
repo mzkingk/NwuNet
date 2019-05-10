@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name">OneTapNwuNet</string>
+    <string name="app_name">NwuNet</string>
     <string name="tile_label">NwuNet</string>
     <string name="tile_status_check">Checking&#8230;</string>
     <string name="tile_status_loggin">Logining&#8230;</string>
@@ -11,11 +11,18 @@
     <string name="tile_status_conflict">Conflict</string>
     <string name="tile_status_no_net_conn">NoNet</string>
     <!--app内文字-->
-    <string name="hello_nwunet_by_shiqingk">Hello!请先保存新旧校园网的账号密码,然后在状态栏添加NwuNet按钮，之后每次连上校园网之后,点它开启新世界吧！！！\nby shiqingk</string>
-    <string name="value_accountNew">写入新账号</string>
+    <string name="hello_nwunet_by_shiqingk">请先保存新旧校园网的账号密码,然后在状态栏添加NwuNet按钮，之后每次连上校园网之后，点它开启新世界吧！！！---shiqingk</string>
+    <string name="value_accountNew">存入新账号</string>
     <string name="value_read_saved_account">读取</string>
-    <string name="value_accountOld">写入旧账号</string>
+    <string name="value_accountOld">存入旧账号</string>
+    <string name="value_btn_toWeb">浏览器登录</string>
+    <string name="btn_value_login">登录</string>
     <string name="value_passwd">密码</string>
     <string name="value_account">账号</string>
-    <string name="textView_bottom_description">提示说明\nNotNwu--非校园网wifi\nFailed--当前旧校园网的账号密码有误\nConflict--当前新校园网的密码错误或者是在线设备已满\n</string>
+    <string name="textView_bottom_description">说明\n
+                                                1.NotNwu---非校园网\n
+                                                2.Failed-------nwunet----------密码错误\n
+                                                3.Conflict----new-student--密码错误或设备已满\n
+                                                4.建议点击通知栏顶部图标登录，app内登录按钮仅为备用，点击后没网，多半设备已满
+    </string>
 </resources>

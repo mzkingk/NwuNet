@@ -1,6 +1,5 @@
 package com.shuaiqing.nwunet.util
 
-import android.util.Log
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
@@ -8,13 +7,12 @@ import java.net.HttpURLConnection
 import java.net.URL
 
 object NwuNet {
-    /* 检测校园网连接状态
+    /* 检测校园网连接状态,nwunet
      * @return null  - 未连接到校园网
      *         false - 已连接校园网但未登录
      *         true  - 已登录校园网
      */
     fun check(checkUrl: String): Boolean? {
-        Log.d(C.LOG_TAG, "NwuNet - check")
         try {
             val obj = URL(checkUrl)
             val response = StringBuffer()
@@ -32,9 +30,8 @@ object NwuNet {
             }
             return response.contains("已使用时间")
         } catch (e: Exception) {
-            e.printStackTrace()
+            return null
         }
-        return null
     }
 
     /**
@@ -45,9 +42,7 @@ object NwuNet {
      * @return true - 登录成功
      *          false - 登录失败
      */
-    fun login(checkUrl: String, userName: String, pwd: String): Boolean {
-
-        Log.d(C.LOG_TAG, "NwuNet - login")
+    fun login(checkUrl: String, userName: String?, pwd: String?): Boolean {
         try {
             val huc = URL(checkUrl).openConnection() as HttpURLConnection
             huc.requestMethod = "POST"
@@ -71,8 +66,7 @@ object NwuNet {
             bufferedReader.close()
             return sbContent.contains("登录成功")
         } catch (e: Exception) {
-            e.printStackTrace()
+            return false
         }
-        return false
     }
 }
