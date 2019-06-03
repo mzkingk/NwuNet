@@ -1,0 +1,6 @@
+echo "--->提交到master分支"
+  git add .
+  git commit -m "修改一下说明文件"
+  git push origin master
+
+echo "--->完成"
