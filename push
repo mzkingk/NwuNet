@@ -1,6 +1,9 @@
+#!/bin/bash
+
+
 echo "--->提交到master分支"
   git add .
-  git commit -m "update build.gradle"
+  git commit -m "更新目录结构"
   git push origin master
 
 echo "--->完成"

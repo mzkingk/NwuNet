@@ -40,9 +40,7 @@ object Net {
             val ipProcess = runtime.exec("ping -c 3 -w 100 $ip")//ping3次
             val exitValue = ipProcess.waitFor()
             return exitValue == 0
-        } catch (e: IOException) {
-            e.printStackTrace()
-        } catch (e: InterruptedException) {
+        } catch (e: Exception) {
             e.printStackTrace()
         }
         return false

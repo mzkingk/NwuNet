@@ -34,7 +34,7 @@
             android:ems="10"
             android:id="@+id/editTextAccount"
             android:layout_alignEnd="@+id/BtnLogin" android:layout_below="@+id/textTop" android:layout_marginTop="0dp"
-            android:layout_marginEnd="-3dp"/>
+            android:layout_marginEnd="-3dp" tools:ignore="LabelFor"/>
     <!--密码-->
     <TextView
             android:text="@string/value_passwd"
@@ -45,14 +45,15 @@
             android:layout_above="@+id/getDataBtn" android:layout_alignEnd="@+id/getDataBtn"
             android:layout_marginEnd="8dp" android:layout_marginBottom="0dp"/>
     <EditText
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/editTextPasswd"
             android:textSize="18sp"
             android:layout_alignStart="@+id/editTextAccount" android:layout_below="@+id/textViewAccount"
-            android:layout_marginTop="0dp" android:layout_marginStart="3dp"/>
+            android:layout_marginTop="0dp" android:layout_marginStart="3dp"
+            tools:ignore="LabelFor"/>
     <!--底部按钮-->
     <Button
             android:text="@string/value_read_saved_account"

@@ -3,17 +3,13 @@ package com.shuaiqing.nwunet.activity
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.shuaiqing.nwunet.R
 import com.shuaiqing.nwunet.service.QSTileService
 import kotlinx.android.synthetic.main.activity_main.*
-import android.support.v4.app.NotificationCompat.getExtras
 import android.content.Intent
-import android.content.BroadcastReceiver
 import android.net.Uri
-import android.util.Log
 
 
 class MainActivity : Activity() {

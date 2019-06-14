@@ -50,11 +50,11 @@ object NewNwuNet {
      */
     fun login(account: String?, passwd: String?): Boolean? {
         try {
-            var redir: String? = null
+            var redirect: String? = null
             for (i in check(C.CAMPUS_CHECK_URL3, C.CAMPUS_RANDOM).toString()) {
-                redir += if (i == '&') "%26" else i
+                redirect += if (i == '&') "%26" else i
             }
-            val formData3 = "web-auth-user=$account&web-auth-password=$passwd&remember-credentials=false&redirect-url=" + redir
+            val formData3 = "web-auth-user=$account&web-auth-password=$passwd&remember-credentials=false&redirect-url=" + redirect
             val con = URL(C.CAMPUS_CHECK_URL4).openConnection() as HttpURLConnection
             con.requestMethod = "POST"
             con.setRequestProperty("content-type", "application/x-www-form-urlencoded;charset=UTF-8")

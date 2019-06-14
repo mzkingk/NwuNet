@@ -20,9 +20,10 @@
     <string name="value_passwd">密码</string>
     <string name="value_account">账号</string>
     <string name="textView_bottom_description">说明\n
-                                                1.NotNwu---非校园网\n
-                                                2.Failed-------nwunet----------密码错误\n
-                                                3.Conflict----new-student--密码错误或设备已满\n
-                                                4.建议点击通知栏顶部图标登录，app内登录按钮仅为备用，点击后没网，多半设备已满
+        1.NotNwu---非校园网\n
+        2.Failed-------nwunet----------密码错误\n
+        3.Conflict----new-student--密码错误或设备已满\n
+        4.建议点击通知栏顶部图标登录，app内登录按钮仅为备用，点击后没网，多半设备已满
     </string>
+    <string name="toastView">Network is OK!</string>
 </resources>

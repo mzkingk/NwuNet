@@ -2,10 +2,10 @@ package com.shuaiqing.nwunet.service
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.net.ConnectivityManager
 import android.os.AsyncTask
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
+import android.util.Log
 import com.shuaiqing.nwunet.R
 import com.shuaiqing.nwunet.util.C
 import com.shuaiqing.nwunet.util.NwuNet
@@ -91,6 +91,7 @@ class QSTileService : TileService() {
             super.onProgressUpdate(*values)
             updateStatus(values[0])
         }
+
     }
 
     /**
@@ -113,7 +114,7 @@ class QSTileService : TileService() {
                 qsTile.updateTile()
             }
         } catch (e: Exception) {
-            println("更新图块抛出异常")
+            Log.println(0, Context.ACCESSIBILITY_SERVICE, "更新图块抛出异常")
         }
     }
 }
